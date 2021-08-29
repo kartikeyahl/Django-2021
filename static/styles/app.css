@@ -31,9 +31,12 @@ img {
 .header {
   position: sticky;
   z-index: 111;
-  background-color: var(--color-sub);
-  padding: 1.5rem 0;
+  background-color: rgb(72, 72, 104);
+  padding: 0.75rem 0;     
+  width: 100%;                    /*bottom nav height */
 }
+
+
 
 .header > .container {
   display: flex;
@@ -55,9 +58,10 @@ img {
 .header__menuItem > a {
   color: var(--color-light);
   font-weight: 300;
+  
 }
 
-.toggle-menu > span {
+.toggle1-menu > span {
   display: none;
 }
 
@@ -80,11 +84,11 @@ img {
     position: relative;
     z-index: 999;
   }
-  .toggle-menu {
+  .toggle1-menu {
     position: relative;
   }
 
-  .toggle-menu > span {
+  .toggle1-menu > span {
     display: block;
     position: fixed;
     top: 1.5rem;
@@ -99,9 +103,9 @@ img {
     border-radius: 50%;
   }
 
-  .toggle-menu__lines,
-  .toggle-menu__lines::before,
-  .toggle-menu__lines::after {
+  .toggle1-menu__lines,
+  .toggle1-menu__lines::before,
+  .toggle1-menu__lines::after {
     pointer-events: none;
     content: '';
     display: block;
@@ -115,26 +119,26 @@ img {
     transition: all 0.3s ease-in-out;
   }
 
-  .toggle-menu__lines::before {
+  .toggle1-menu__lines::before {
     top: 3.4rem;
     transform-origin: 0 0;
   }
-  .toggle-menu__lines::after {
+  .toggle1-menu__lines::after {
     top: 4.6rem;
     transform-origin: 0 0;
   }
 
-  .header__nav input[type='checkbox']:checked + .toggle-menu > .toggle-menu__lines::before {
+  .header__nav input[type='checkbox']:checked + .toggle1-menu > .toggle1-menu__lines::before {
     margin-left: 3px;
     transform: rotate(45deg) scaleX(1.2) translateX(-2px) translateY(-4px);
     visibility: visible;
   }
 
-  .header__nav input[type='checkbox']:checked + .toggle-menu > .toggle-menu__lines {
+  .header__nav input[type='checkbox']:checked + .toggle1-menu > .toggle1-menu__lines {
     visibility: hidden;
   }
 
-  .header__nav input[type='checkbox']:checked + .toggle-menu > .toggle-menu__lines::after {
+  .header__nav input[type='checkbox']:checked + .toggle1-menu > .toggle1-menu__lines::after {
     transform: rotate(-45deg) scaleX(1.2) translateX(-2px) translateY(3px);
     visibility: visible;
   }
@@ -174,6 +178,7 @@ img {
   display: flex;
   align-items: center;
   background-color: var(--color-sub);
+  background-image: linear-gradient(to right bottom, rgba(140,34,192,0.8), rgba(45,31,220,0.8)), url(../images/Computers.png);
 }
 
 .hero-section__box {
@@ -486,8 +491,10 @@ img {
   Projects Page
 ========================*/
 .projects > .hero-section {
-  background: var(--color-sub-lighter);
+  /*background: var(--color-sub-lighter);*/
   height: 30vh;
+  background-image: linear-gradient(to right bottom, rgba(140,34,192,0.8), rgba(45,31,220,0.8)), url(../images/Computers.png);
+
 }
 
 .projects .hero-section__box {
@@ -495,12 +502,12 @@ img {
 }
 
 .projects .hero-section__box > h2 {
-  color: var(--color-sub);
+  color: white;
 }
 
 .projects .hero-section__box > h2 > span {
   font-weight: 700;
-  color: var(--color-sub);
+  color: white;
 }
 
 .projectsList {
@@ -860,4 +867,223 @@ img {
 
 
   z-index: 99999;
+}
+
+
+
+/*=======================
+  UPPER NAVBAR
+========================*/
+
+.header1 {
+  position: sticky;
+  z-index: 111;
+  background-color: var(--color-sub);
+  padding: 1.5rem 0;                       /*top nav height */
+  }
+  
+
+
+  .header1 > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  }
+  
+  .header1__logo > img {
+  height: 3.8rem;
+  }
+  
+  .header1__nav > ul {
+  display: inline-flex;
+  align-items: center;
+  list-style: none;
+  gap: 6.5rem;
+  }
+  
+  .header1__menuItem > a {
+  color: var(--color-light);
+  font-weight: 300;
+  }
+  
+  .toggle-menu > span {
+  display: none;
+  }
+  
+  .header1__nav input[type='checkbox'] {
+  display: none;
+  }
+  
+  .header1__nav input[type='checkbox']:checked ~ .header1__menu {
+  opacity: 1;
+  pointer-events: all;
+  }
+  
+  .project--thumbnail {
+  height: 250px;
+  object-fit: cover;
+  }
+  @media screen and (max-width: 800px) {
+    .header1__logo {
+      position: relative;
+      z-index: 999;
+    }
+    .toggle-menu {
+      position: relative;
+    }
+    
+    .toggle-menu > span {
+      display: block;
+      position: fixed;
+      top: 1.5rem;
+      right: 2.75rem;
+      cursor: pointer;
+      padding: 1rem;
+      background: var(--color-sub-light);
+      z-index: 999;
+      font-size: 0;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+    }
+    
+    .toggle-menu__lines,
+    .toggle-menu__lines::before,
+    .toggle-menu__lines::after {
+      pointer-events: none;
+      content: '';
+      display: block;
+      height: 2px;
+      width: 2.5rem;
+      position: fixed;
+      top: 4rem;
+      right: 4rem;
+      z-index: 999;
+      background: var(--color-light);
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .toggle-menu__lines::before {
+      top: 3.4rem;
+      transform-origin: 0 0;
+    }
+    .toggle-menu__lines::after {
+      top: 4.6rem;
+      transform-origin: 0 0;
+    }
+    
+    .header1__nav input[type='checkbox']:checked + .toggle-menu > .toggle-menu__lines::before {
+      margin-left: 3px;
+      transform: rotate(45deg) scaleX(1.2) translateX(-2px) translateY(-4px);
+      visibility: visible;
+    }
+    
+    .header1__nav input[type='checkbox']:checked + .toggle-menu > .toggle-menu__lines {
+      visibility: hidden;
+    }
+    
+    .header1__nav input[type='checkbox']:checked + .toggle-menu > .toggle-menu__lines::after {
+      transform: rotate(-45deg) scaleX(1.2) translateX(-2px) translateY(3px);
+      visibility: visible;
+    }
+    
+    .header1__nav > ul {
+      opacity: 0;
+      pointer-events: none;
+      flex-direction: column;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: var(--color-sub);
+      transition: all 0.5s ease-in-out;
+    }
+    
+    .header1__menuItem a {
+      transition: all 0.5s ease-in-out;
+      padding: 1rem 3rem;
+    }
+    
+    .header1__menuItem a:hover {
+      padding: 1rem 3rem;
+      border-radius: 3px;
+      background: var(--color-sub-light);
+    }
+    }
+
+
+    /*----------------------------NAVBAR STYLES-----------------------------*/
+
+    body {
+      overflow-x: hidden;
+      font-family: 'Lato', sans-serif;
+      color: #505962
+    }
+    .landing {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      display: table;
+      z-index: -1;
+      clip-path: polygon(0 0, 100% 0, 100% 50vh, 0 100%);
+    }
+
+    .home-inner {
+      background-image: linear-gradient(to right bottom, rgba(140,34,192,0.8), rgba(45,31,220,0.8)), url(../images/Computers.png);
+    }
+
+    .home-wrap {
+      clip: rect(0, auto, auto, 0);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .home-inner {
+      position: fixed;
+      display: table;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      will-change: transform;
+    }
+
+.navbar {
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: .9rem;
+	letter-spacing: .1rem;
+	background-color: rgba(0, 0, 0, 0.6)!important;
+}
+.navbar-brand img {
+	height: 2rem;
+}
+.navbar-nav li {
+	padding-right: 0.1rem;
+}
+.navbar-dark .navbar-nav .nav-link {
+	color: white;
+	padding-top: .8rem;
+}
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+	color: #1ebba3;
+}
+.active {
+	color: #1ebba3;
+}
+.offset:before {
+	display: block;
+	content: "";
+	height: 4rem;
+	margin-top: -4rem;
 }
